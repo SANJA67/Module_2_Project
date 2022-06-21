@@ -1,82 +1,45 @@
-package com.java.javarush.game.gameObjects.abstracts.herbivores;
+package com.javarush.game.gameObjects.abstracts.herbivores;
 
-import com.java.javarush.game.gameObjects.abstracts.Herbivore;
+import com.javarush.game.gameObjects.abstracts.Animal;
 
-public class Caterpillar extends Herbivore { // гусеница
+import java.util.Arrays;
 
-     private final String image = "\uD83D\uDC1B";
+public class Caterpillar extends Animal { // гусеница
 
-    public final int[] WHO_TO_EAT = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 100};
+    private final Animal[] animals = {};
 
-    private static final int maxInCell = 1000;
-
-    private final int speedCell = 0;
-
-    private double weight = 0.01;
-
-    private int eatUp = 0;
-
-    private int conditionX;
-
-    private int conditionY;
+    private final String image = "\uD83D\uDC1B";
 
     public Caterpillar() {
-        super(maxInCell);   // private final int maxInCell = 30;
+    }
+
+    public Caterpillar(int maxInCell, int speedCell, double weight, double eatUp, int[] whoToEat, int conditionX, int conditionY, int ID) {
+        super(maxInCell, speedCell, weight, eatUp, whoToEat, conditionX, conditionY, ID);
 
     }
 
     @Override
     public String toString() {
-        return image;
+        return "Caterpillar{" +
+                "image='" + image + '\'' +
+                ", maxInCell=" + maxInCell +
+                ", speedCell=" + speedCell +
+                ", weight=" + weight +
+                ", eatUp=" + eatUp +
+                ", whoToEat=" + Arrays.toString(whoToEat) +
+                ", conditionX=" + conditionX +
+                ", conditionY=" + conditionY +
+                '}';
     }
 
-
+    public Animal[] getAnimals() {
+        return animals;
+    }
 
     public String getImage() {
         return image;
     }
-
-    public int[] getWHO_TO_EAT() {
-        return WHO_TO_EAT;
-    }
-
-    public double getWeight() {
-        return weight;
-    }
-
-    public void setWeight(double weight) {
-        this.weight = weight;
-    }
-
-    public int getMaxInCell() {
-        return maxInCell;
-    }
-
-    public int getSpeedCell() {
-        return speedCell;
-    }
-
-    public int getEatUp() {
-        return eatUp;
-    }
-
-    public void setEatUp(int eatUp) {
-        this.eatUp = eatUp;
-    }
-
-    public int getConditionX() {
-        return conditionX;
-    }
-
-    public void setConditionX(int conditionX) {
-        this.conditionX = conditionX;
-    }
-
-    public int getConditionY() {
-        return conditionY;
-    }
-
-    public void setConditionY(int conditionY) {
-        this.conditionY = conditionY;
-    }
 }
+
+
+

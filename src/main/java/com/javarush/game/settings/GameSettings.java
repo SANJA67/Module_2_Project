@@ -1,4 +1,4 @@
-package com.java.javarush.game.settings;
+package com.javarush.game.settings;
 
 public class GameSettings {
 

@@ -1,49 +1,65 @@
-package com.java.javarush.game.gameObjects.abstracts;
+package com.javarush.game.gameObjects.abstracts;
 
-import com.java.javarush.game.gameObjects.abstracts.predatory.Bear;
+import com.javarush.game.gameObjects.abstracts.predatory.Bear;
 
-import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.util.List;
+import java.util.Random;
 
-public abstract class Animal implements Cloneable {
+public abstract class Animal {
+
     public int maxInCell;
 
-    public Animal(int maxInCell) {
-        this.maxInCell = maxInCell;
+    public int speedCell;
+
+    public double weight;
+
+    public double eatUp;
+
+    public int[] whoToEat;
+
+    public int conditionX;
+
+    public int conditionY;
+
+    public int ID;
+
+    public Animal() {
     }
 
-    @Override
-    public Animal clone() throws CloneNotSupportedException {
-        return (Animal) super.clone();
+    public Animal(int maxInCell, int speedCell, double weight, double eatUp, int[] whoToEat, int conditionX, int conditionY, int ID) {
+        this.maxInCell = maxInCell;
+        this.speedCell = speedCell;
+        this.weight = weight;
+        this.eatUp = eatUp;
+        this.whoToEat = whoToEat;
+        this.conditionX = conditionX;
+        this.conditionY = conditionY;
+        this.ID = ID;
     }
+
 
     public void eat(Animal animal, List<Animal> animalCell) {
-        Class cl = animal.getClass();
-        Method ints;
-        try {
-            ints = cl.getMethod("getWHO_TO_EAT");
-        } catch (NoSuchMethodException e) {
-            throw new RuntimeException(e);
+        Random random = new Random();
+        Animal animalNumber = animalCell.get(random.nextInt(animalCell.size()));
+
+        if(animal.whoToEat[animalNumber.ID] != 0 && random.nextInt(100) < animal.whoToEat[animalNumber.ID]) {
+
         }
-        int[] i;
-        try {
-            i = (int[]) ints.invoke(animal);
-        } catch (IllegalAccessException e) {
-            throw new RuntimeException(e);
-        } catch (InvocationTargetException e) {
-            throw new RuntimeException(e);
+
+
+
+
+
+        for (int i = 0; i < animal.whoToEat.length; i++) {
+
         }
-        for (int j = 0; j < i.length; j++) {
-            System.out.print(i[j] + " ");
-        }
+
     }
 
     public void walk(Animal animal) {
         if (animal instanceof Bear) {
             Object bear = null;
-            ((Bear) bear).getSpeedCell();
+
 
         }
     }

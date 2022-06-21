@@ -1,6 +1,9 @@
-package com.java.javarush.game.island;
+package com.javarush.game.island;
 
-import com.java.javarush.game.gameObjects.abstracts.Animal;
+
+import com.javarush.game.gameObjects.abstracts.Animal;
+
+import java.util.List;
 
 public class PlayingField {
 
@@ -18,9 +21,16 @@ public class PlayingField {
     }
 
     public void superMethod()  {
-        for (Animal animal : field[0][0].animalCell) {
-            animal.eat(animal, field[0][0].animalCell);
+        List<Animal> animalCell = field[0][0].animalCell;
+        for (int i = 0; i < 1; i++) {
+            animalCell.get(0).eat(animalCell.get(i), field[0][0].animalCell);
         }
+
+        //printCell(0, 0);
+
+        //for (Animal animal : field[0][0].animalCell) {
+         //   field[0][0].get(1).eat(animal, field[0][0].animalCell);
+        //}
         /*for (int i = 0; i < a; i++) {
             for (int j = 0; j < b; j++) {
                 for (Animal animal : field[i][j].animalCell) {
@@ -28,5 +38,16 @@ public class PlayingField {
                 }
             }
         }*/
+    }
+
+    public void printCell (int cellX, int cellY) {
+        List<Animal> animalCell = field[cellX][cellX].animalCell;
+        for (Animal animal : animalCell) {
+            for (int j = 0; j < 10; j++) {
+                System.out.print(animal.getClass().toString());
+            }
+            System.out.println();
+        }
+
     }
 }

@@ -1,4 +1,4 @@
-package com.java.javarush.game.report;
+package com.javarush.game.report;
 
 public class Statistics {
 }

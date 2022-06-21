@@ -5,24 +5,26 @@ import com.javarush.game.gameObjects.abstracts.herbivores.*;
 
 import java.util.Arrays;
 
-public class Boa extends Animal { // Удав
+public class Wolf extends Animal {
 
-    private final String image = "\uD83D\uDC0D";
-
+    public int ate;
     private final Animal[] animals =
-            {new Fox(), new Rabbit(), new Mouse(), new Duck()};
+            {new Horse(), new Deep(), new Rabbit(), new Mouse(), new Goat(),
+                    new Sheep(), new Boar(), new Buffalo(), new Duck()};
+    private final String image = "\uD83D\uDC3A";
 
-    public Boa() {
+    public Wolf() {
     }
 
-    public Boa(int maxInCell, int speedCell, double weight, double eatUp, int[] whoToEat, int conditionX, int conditionY, int ID) {
+    public Wolf(int maxInCell, int speedCell, double weight, double eatUp,
+                int[] whoToEat, int conditionX, int conditionY, int ID) {
         super(maxInCell, speedCell, weight, eatUp, whoToEat, conditionX, conditionY, ID);
 
     }
 
     @Override
     public String toString() {
-        return "Boa{" +
+        return "Wolf{" +
                 "image='" + image + '\'' +
                 ", maxInCell=" + maxInCell +
                 ", speedCell=" + speedCell +
@@ -34,12 +36,11 @@ public class Boa extends Animal { // Удав
                 '}';
     }
 
-    public String getImage() {
-        return image;
-    }
-
     public Animal[] getAnimals() {
         return animals;
     }
-}
 
+    public String getImage() {
+        return image;
+    }
+}

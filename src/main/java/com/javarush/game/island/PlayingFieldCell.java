@@ -1,7 +1,7 @@
-package com.java.javarush.game.island;
+package com.javarush.game.island;
 
-import com.java.javarush.game.gameObjects.Grass;
-import com.java.javarush.game.gameObjects.abstracts.Animal;
+import com.javarush.game.gameObjects.abstracts.Vegetation;
+import com.javarush.game.gameObjects.abstracts.Animal;
 
 import java.util.List;
 
@@ -9,9 +9,9 @@ public class PlayingFieldCell {
     int cellX;
     int cellY;
     List<Animal> animalCell;
-    List<Grass> grassCell;
+    List<Vegetation> grassCell;
 
-    public PlayingFieldCell(int cellX, int cellY, List<Animal> animalCell, List<Grass> grassCell) {
+    public PlayingFieldCell(int cellX, int cellY, List<Animal> animalCell, List<Vegetation> grassCell) {
         this.cellX = cellX;
         this.cellY = cellY;
         this.animalCell = animalCell;

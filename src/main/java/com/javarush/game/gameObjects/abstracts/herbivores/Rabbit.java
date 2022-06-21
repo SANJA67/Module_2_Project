@@ -1,28 +1,26 @@
-package com.javarush.game.gameObjects.abstracts.predatory;
+package com.javarush.game.gameObjects.abstracts.herbivores;
 
 import com.javarush.game.gameObjects.abstracts.Animal;
-import com.javarush.game.gameObjects.abstracts.herbivores.*;
 
 import java.util.Arrays;
 
-public class Boa extends Animal { // Удав
+public class Rabbit extends Animal {
 
-    private final String image = "\uD83D\uDC0D";
+    private final String image = "\uD83D\uDC07";
 
-    private final Animal[] animals =
-            {new Fox(), new Rabbit(), new Mouse(), new Duck()};
+    private final Animal[] animals = {};
 
-    public Boa() {
+    public Rabbit() {
     }
 
-    public Boa(int maxInCell, int speedCell, double weight, double eatUp, int[] whoToEat, int conditionX, int conditionY, int ID) {
+    public Rabbit(int maxInCell, int speedCell, double weight, double eatUp, int[] whoToEat, int conditionX, int conditionY, int ID) {
         super(maxInCell, speedCell, weight, eatUp, whoToEat, conditionX, conditionY, ID);
 
     }
 
     @Override
     public String toString() {
-        return "Boa{" +
+        return "Rabbit{" +
                 "image='" + image + '\'' +
                 ", maxInCell=" + maxInCell +
                 ", speedCell=" + speedCell +
@@ -42,4 +40,3 @@ public class Boa extends Animal { // Удав
         return animals;
     }
 }
-

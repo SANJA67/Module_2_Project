@@ -1,80 +1,45 @@
-package com.java.javarush.game.gameObjects.abstracts.predatory;
+package com.javarush.game.gameObjects.abstracts.predatory;
 
-import com.java.javarush.game.gameObjects.abstracts.Predators;
+import com.javarush.game.gameObjects.abstracts.Animal;
+import com.javarush.game.gameObjects.abstracts.herbivores.*;
 
-public class Bear extends Predators {
+import java.util.Arrays;
+
+public class Bear extends Animal {
 
     private final String image = "\uD83D\uDC3B";
 
-    private final int[] WHO_TO_EAT = new int[]{0, 80, 0, 0, 0, 40, 80, 80, 90, 70, 70, 50, 20, 10, 0, 0};
-
-    private static final int maxInCell = 5;
-
-    private final int speedCell = 2;
-
-    private double weight = 500;
-
-    private int eatUp = 80;
-
-    private int conditionX;
-
-    private int conditionY;
+    private final Animal[] animals =
+            {new Boa(), new Horse(), new Deep(), new Rabbit(), new Mouse(), new Goat(),
+                    new Sheep(), new Boar(), new Buffalo(), new Duck()};
 
     public Bear() {
-        super(maxInCell);   // private final int maxInCell = 5;
+    }
+
+    public Bear(int maxInCell, int speedCell, double weight, double eatUp, int[] whoToEat, int conditionX, int conditionY, int ID) {
+        super(maxInCell, speedCell, weight, eatUp, whoToEat, conditionX, conditionY, ID);
 
     }
 
     @Override
     public String toString() {
-        return image;
+        return "Bear{" +
+                "image='" + image + '\'' +
+                ", maxInCell=" + maxInCell +
+                ", speedCell=" + speedCell +
+                ", weight=" + weight +
+                ", eatUp=" + eatUp +
+                ", whoToEat=" + Arrays.toString(whoToEat) +
+                ", conditionX=" + conditionX +
+                ", conditionY=" + conditionY +
+                '}';
     }
 
     public String getImage() {
         return image;
     }
 
-    public int[] getWHO_TO_EAT() {
-        return WHO_TO_EAT;
-    }
-
-    public double getWeight() {
-        return weight;
-    }
-
-    public void setWeight(double weight) {
-        this.weight = weight;
-    }
-
-    public int getMaxInCell() {
-        return maxInCell;
-    }
-
-    public int getSpeedCell() {
-        return speedCell;
-    }
-
-    public int getEatUp() {
-        return eatUp;
-    }
-
-    public void setEatUp(int eatUp) {
-        this.eatUp = eatUp;
-    }
-
-    public int getConditionX() {
-        return conditionX;
-    }
-
-    public void setConditionX(int conditionX) {
-        this.conditionX = conditionX;
-    }
-
-    public int getConditionY() {
-        return conditionY;
-    }
-
-    public void setConditionY(int conditionY) {
-        this.conditionY = conditionY;
+    public Animal[] getAnimals() {
+        return animals;
     }
 }

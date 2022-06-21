@@ -1,10 +1,7 @@
-package com.java.javarush.game.start;
+package com.javarush.game.start;
 
-import com.java.javarush.game.assembly.Creator;
-import com.java.javarush.game.gameObjects.Grass;
-import com.java.javarush.game.gameObjects.abstracts.predatory.Bear;
 
-import java.util.Random;
+import com.javarush.game.assembly.Creator;
 
 public class Mine {
 
