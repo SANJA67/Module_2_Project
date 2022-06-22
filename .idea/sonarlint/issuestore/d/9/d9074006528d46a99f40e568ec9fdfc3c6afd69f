@@ -1,0 +1,5 @@
+
+f	java:S117	"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(í³Ç¯
+f	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(”‚Å
+w
+java:S1128"URemove this unused import 'com.javarush.game.gameObjects.abstracts.vegetation.Grass'.(‹¯˜´üÿÿÿÿ8¥üî¼˜0
